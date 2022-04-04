@@ -1,6 +1,6 @@
 /* IMPORTS FUNCTIONS */
 import { updateGround, setupGround } from "./ground.js";
-import { updateDino, setupDino, getDinoRect } from "./dino.js";
+import { updateDino, setupDino, getDinoRect, setDinoLose } from "./dino.js";
 import { updateCactus, setupCactus, getCactusRects } from "./cactus.js";
 
 
@@ -77,7 +77,11 @@ function handleStart() {
 }
 
 function handleLose() {
-
+  setDinoLose();
+  setTimeout(() => {
+    document.addEventListener("keydown", handleStart, { once: true})
+    startScreenElement.classList.remove("hide");
+  }, 100)
 }
 
 

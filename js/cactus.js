@@ -1,5 +1,5 @@
 /* IMPORTS FUNCTIONS */
-import { setCustomProperty, incrementCustomProperty, getCustomProperty } from "./updateCustomProperty/.js";
+import { setCustomProperty, incrementCustomProperty, getCustomProperty } from "./updateCustomProperty.js";
 
 /* VARIABLES */
 const SPEED = 0.05;
