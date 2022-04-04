@@ -1,7 +1,9 @@
+import { updateGround } from "./ground.js";
+
 const WORLD_WIDTH = 100;
 const WORLD_HEIGHT = 30;
 
-const worldElem = document.querySelector('[data-world');
+const worldElem = document.querySelector('[data-world]');
 
 setPixelToWorldScale()
 window.addEventListener("resize", setPixelToWorldScale)
@@ -14,7 +16,8 @@ function update(time) {
     return
   }
   const delta = time - lastTime;
-  console.log(delta);
+
+  updateGround(delta)
 
   lastTime = time
   window.requestAnimationFrame(update)
