@@ -1,6 +1,6 @@
 # Dino Game
 
-Copycast of the famous Google Dino game in Javascript
+Copycast of the Google Dino game in Javascript
 
 ## Table of contents
 
@@ -27,6 +27,7 @@ Copycast of the famous Google Dino game in Javascript
 - Semantic HTML5 markup
 - CSS custom properties
 - JavaScript
+- JavaScript Modules
 
 ### What I learned
 
@@ -75,7 +76,7 @@ function createCactus() {
   worldElement.append(cactus);
 }
 ```
-I learned about the
+I learned about the Spread syntax (...) and the method Element.getBoundingClientRect():
 
 ```js
 export function getCactusRects() {
@@ -84,16 +85,27 @@ export function getCactusRects() {
   })
 }
 ```
+I learned about the Array.prototype.some() method:
 
 ```js
-
+function checkLose() {
+  const dinoRect = getDinoRect();
+  return getCactusRects().some(rect => isCollision(rect, dinoRect));
+}
 ```
 
-(user-select property in css)
+I learned about the user-select CSS property:
+
+```css
+*, ::before, ::after {
+  box-sizing: border-box;
+  user-select: none;
+}
+```
 
 ### Continued development
 
-Following this project, I will continue working on small JavaScript projects to exercise my self and improve my JavaScript and CSS skills. I am also going to learn more about React.
+Following this project, I will continue working on small JavaScript projects to exercise my self and improve my JavaScript and CSS skills. I am also going to learn more about React throught courses and projects.
 
 ### Useful resources
 
@@ -105,9 +117,9 @@ Following this project, I will continue working on small JavaScript projects to 
 - [MDN - CSSStyleDeclaration.setProperty()](https://developer.mozilla.org/en-US/docs/Web/API/CSSStyleDeclaration/setProperty)
 - [MDN - KeyboardEvent.code](https://developer.mozilla.org/en-US/docs/Web/API/KeyboardEvent/code)
 - [MDN - HTMLElement.dataset](https://developer.mozilla.org/en-US/docs/Web/API/HTMLElement/dataset)
-- [MDN - Spread syntax (...)]()
-- []()
-- []()
+- [MDN - Spread syntax (...)](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Operators/Spread_syntax)
+- [MDN - Element.getBoundingClientRect()](https://developer.mozilla.org/en-US/docs/Web/API/Element/getBoundingClientRect)
+- [MDN - Array.prototype.some()](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/some)
 
 
 ## Author
