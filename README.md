@@ -30,7 +30,60 @@ Copycast of the famous Google Dino game in Javascript
 
 ### What I learned
 
-In this project, I leaned about ...:
+In this project, I leaned about the method window.requestAnimationFrame():
+
+```js
+function handleStart() {
+  lastTime = null;
+  speedScale = 1;
+  score = 1;
+  setupGround();
+  setupDino();
+  setupCactus();
+  startScreenElement.classList.add("hide");
+  window.requestAnimationFrame(update);
+}
+```
+I learned about the function parseFloat(), and the two methods getComputedStyle() and getPropertyValue():
+
+```js
+export function getCustomProperty(elem, prop) {
+  return parseFloat(getComputedStyle(elem).getPropertyValue(prop)) || 0
+}
+```
+
+I learned about the KeyboardEvent.code property:
+
+```js
+function onJump(event) {
+  if (event.code !== "Space" || isJumping) return
+
+  yVelocity = JUMP_SPEED;
+  isJumping = true;
+}
+```
+
+I learned about the HTMLElement.dataset property:
+
+```js
+function createCactus() {
+  const cactus = document.createElement("img");
+  cactus.dataset.cactus = true;
+  cactus.src = "images/cactus.png";
+  cactus.classList.add("cactus");
+  setCustomProperty(cactus, "--left", 100);
+  worldElement.append(cactus);
+}
+```
+I learned about the
+
+```js
+export function getCactusRects() {
+  return [...document.querySelectorAll("[data-cactus]")].map(cactus => {
+    return cactus.getBoundingClientRect();
+  })
+}
+```
 
 ```js
 
@@ -44,9 +97,15 @@ Following this project, I will continue working on small JavaScript projects to 
 
 ### Useful resources
 
-- []()
-- []()
-- []()
+- [How To Create Your First Game - JavaScript](https://www.youtube.com/watch?v=47eXVRJKdkU)
+- [MDN - Window.requestAnimationFrame()](https://developer.mozilla.org/en-US/docs/Web/API/window/requestAnimationFrame)
+- [MDN - Window.getComputedStyle()](https://developer.mozilla.org/en-US/docs/Web/API/Window/getComputedStyle)
+- [MDN - parseFloat()](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/parseFloat)
+- [MDN - CSSStyleDeclaration.getPropertyValue()](https://developer.mozilla.org/en-US/docs/Web/API/CSSStyleDeclaration/getPropertyValue)
+- [MDN - CSSStyleDeclaration.setProperty()](https://developer.mozilla.org/en-US/docs/Web/API/CSSStyleDeclaration/setProperty)
+- [MDN - KeyboardEvent.code](https://developer.mozilla.org/en-US/docs/Web/API/KeyboardEvent/code)
+- [MDN - HTMLElement.dataset](https://developer.mozilla.org/en-US/docs/Web/API/HTMLElement/dataset)
+- [MDN - Spread syntax (...)]()
 - []()
 - []()
 

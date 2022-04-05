@@ -45,7 +45,6 @@ function createCactus() {
   cactus.classList.add("cactus");
   setCustomProperty(cactus, "--left", 100);
   worldElement.append(cactus);
-
 }
 
 function randomNumberBetween(min, max) {

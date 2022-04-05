@@ -73,7 +73,6 @@ function handleStart() {
   setupCactus();
   startScreenElement.classList.add("hide");
   window.requestAnimationFrame(update);
-
 }
 
 function handleLose() {
